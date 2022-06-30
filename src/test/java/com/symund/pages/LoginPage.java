@@ -25,4 +25,7 @@ public class LoginPage {
 
     }
 
+    @FindBy (xpath = "//input[@type='submit']")
+    public WebElement loginButton;
+
 }
