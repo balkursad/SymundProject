@@ -28,4 +28,18 @@ public class LoginPage {
     @FindBy (xpath = "//input[@type='submit']")
     public WebElement loginButton;
 
+    @FindBy (xpath = "//p[@class='warning wrongPasswordMsg']")
+    public WebElement wrongPasswordWarning;
+
+    @FindBy (xpath = "//a[@class='toggle-password']")
+    public WebElement eyeButton;
+
+    @FindBy (id = "lost-password")
+    public WebElement ForgotPassword;
+
+    @FindBy(id= "reset-password-submit")
+    public WebElement ResetPassword;
+
+
+
 }
