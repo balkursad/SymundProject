@@ -15,7 +15,7 @@ public class Login_StepDefinition {
     DashboardPage dashboardPage = new DashboardPage();
     @Given("User is on Symund login Page")
     public void user_is_on_symund_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("symund.url"));
     }
     @When("User type {string} on the username box")
     public void user_type_on_the_username_box(String string) {
@@ -79,7 +79,7 @@ public class Login_StepDefinition {
 
     @Then("User should see validation message on the password and username")
     public void userShouldSeeValidationMessageOnThePasswordAndUsername() {
-        loginPage.userName.getAttribute("required");
-        loginPage.password.getAttribute("required");
+        Assert.assertEquals("true",loginPage.userName.getAttribute("required"));
+        Assert.assertEquals("true",loginPage.password.getAttribute("required"));
     }
 }

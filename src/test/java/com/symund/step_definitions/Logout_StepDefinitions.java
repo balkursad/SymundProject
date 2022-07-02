@@ -17,7 +17,7 @@ public class Logout_StepDefinitions {
 
     @Given("User is on Symund dashboard page")
     public void user_is_on_symund_dashboard_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("symund.url"));
         loginPage.login("Employee31", "Employee123");
     }
     @When("User click on the profile button")
