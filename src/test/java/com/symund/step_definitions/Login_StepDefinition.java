@@ -1,6 +1,7 @@
 package com.symund.step_definitions;
 
 import com.symund.pages.DashboardPage;
+import com.symund.pages.ForgetPasswordPage;
 import com.symund.pages.LoginPage;
 import com.symund.utils.ConfigurationReader;
 import com.symund.utils.Driver;
@@ -13,6 +14,7 @@ import org.junit.Assert;
 public class Login_StepDefinition {
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
+    ForgetPasswordPage forgetPasswordPage = new ForgetPasswordPage();
     @Given("User is on Symund login Page")
     public void user_is_on_symund_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("symund.url"));
@@ -67,7 +69,7 @@ public class Login_StepDefinition {
 
     @Then("User should see the Reset Password button")
     public void userShouldSeeTheResetPasswordButton() {
-        Assert.assertTrue(loginPage.ResetPassword.isDisplayed());
+        Assert.assertTrue(forgetPasswordPage.ResetPassword.isDisplayed());
     }
 
     @Then("User should see valid placeholders on Username and Password fields")
