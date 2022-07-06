@@ -21,7 +21,7 @@ public class Login_StepDefinition {
     }
     @When("User type {string} on the username box")
     public void user_type_on_the_username_box(String string) {
-        loginPage.userName.sendKeys("kursad");
+        loginPage.userName.sendKeys(string);
     }
     @When("User type {string} on the password box")
     public void user_type_on_the_password_box(String string) {
@@ -38,7 +38,7 @@ public class Login_StepDefinition {
 
 
     @Then("User should see the Wrong username or password message")
-    public void userShouldSeeTheMessage() {
+    public void userShouldSeeTheMessage(){
         Assert.assertTrue("Accidently login succeed", loginPage.wrongPasswordWarning.isDisplayed());
     }
 
@@ -84,4 +84,6 @@ public class Login_StepDefinition {
         Assert.assertEquals("true",loginPage.userName.getAttribute("required"));
         Assert.assertEquals("true",loginPage.password.getAttribute("required"));
     }
+
+
 }
